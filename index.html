@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name =
+      "viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv =
+      "X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" 
+      type="text/css" href="corpo.css"/>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title>Corporate Website</title>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;1,100;1,300;1,600&family=Poppins:wght@600&family=Roboto:wght@300;400;500;700;900&display=swap');
+      :root{
+        --white: #fff;
+        --lightgrey: #d3d3d3;
+        --core: rgb(43,155,227);
+        --excore:rgba(101,190,248,1);
+        --Roboto: 'Roboto', sans-serif;
+        --Poppins: 'Poppins', sans-serif;
+      }
+      *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .box-container{
+        min-height: 100vh;
+        overflow: hidden;
+        font-family: var(--Roboto);
+      }
+      section{
+        margin: 0 1rem;
+      }
+      img{
+        width: 100%;
+      }
+      a{
+        text-decoration: none;
+        color: var(--white);
+      }
+      .navbar{
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        background-color: var(--core);
+      }
+      .logo{
+        font-size: 1.1rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: -0.5px;
+      }
+      .navbar span{
+        color: var(--white);
+        letter-spacing: 3px;
+        font-size: .9rem;
+        margin: 0 5px;
+        font-weight: 400;
+      }
+      .navbar-nav li{
+        list-style: none;
+        display: inline-block;
+      }
+      .navbar-nav a{
+        margin: 0 .5rem;
+        font-family: var(--Poppins);
+        cursor: pointer;
+      }
+      .navbar-nav li::after{
+        content: "";
+        width: 0%;
+        height: 2px;
+        display: block;
+        background: var(--white);
+        margin: auto;
+        transition: 0.5s;
+      }
+      .navbar-nav li:hover::after{
+        width: 100%;
+      }
+      /* services */
+      .title{
+        text-align: center;
+        padding: 2.5rem 0;
+        width: 60%;
+      }
+      .title h2{
+        font-size: 1.1rem;
+        font-weight: 500;
+        letter-spacing: -0.5px;
+      }
+      .title span{
+        font-weight: 400;
+        font-size: 1rem;
+        color: var(--core);
+      }
+      .title p{
+        font-size: 0.9rem;
+        padding: 0.5rem 0;
+        opacity: 0.5;
+        line-height: 1.5;
+        padding: 0.5rem 1rem;
+      }
+      /* items */
+      .item-container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .box{
+        margin: 0 0.3rem;
+        height: 130px;
+        width: 130px;
+        display: flex;
+        padding: 1rem;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: var(--core);
+        color: var(--white);
+        transition: all .5s ease;
+      }
+      .box:hover{
+        color: var(--core);
+        background: var(--white);
+        border: 1px solid var(--core);
+      }
+      .box i{
+        font-size: 2rem;
+        padding-top: 1rem;
+      }
+      .box h4{
+        font-weight: 400;
+        margin: 1rem auto;
+      }
+      /* end of items*/
+      
+      /*conference*/
+      .conference,
+      .center,
+      .another-center,
+      .services{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color:whitesmoke;
+        padding-bottom: 2rem;
+      }
+      .services{
+        background: var(--white);
+      }
+      .gallery{
+        display: grid;
+        grid-template-areas:
+        "img1 img1 img2"
+        "img1 img1 img3"
+        ;
+        width: 60%;
+        place-items: center;
+        gap: 0.5rem;
+      }
+      .gallery > img{
+        height: 100%;
+        object-fit: cover;
+      }
+      .image-1{
+        grid-area: img1;
+        aspect-ratio: 1/1;
+      }
+      .image-2{
+        grid-area: img2;
+        aspect-ratio: 2/2;
+      }
+      .image-3{
+        grid-area: img3;
+        aspect-ratio: 2/2;
+      }
+      /* conference end*/
+      /* center*/
+      .center{
+        background: var(--white);
+      }
+      .gallery2{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        width: 60%;
+        gap: 0.5rem;
+      }
+      .gallery2 .image2 > img{
+        height: 100%;
+        object-fit: cover;
+      }
+      /* center */
+      .another-center{
+        background: whitesmoke;
+      }
+      .box-another-center{
+        display: flex;
+        width: 60%;
+      }
+      .links li{
+        list-style: none;
+        padding: 1.1rem;
+        background-color: var(--core);
+        transition: all .5s ease;
+        margin: 0;
+         cursor: pointer;
+      }
+      .links li:hover{
+        background: rgb(24,120,182);
+      }
+      .content-image{
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        background-color: var(--white);
+      }
+      .content-image div{
+        display: flex;
+        padding: 1rem 0;
+        overflow: hidden;
+        overflow-x: scroll;
+      }
+      .content-image h2{
+        font-weight: 350;
+        font-size: 0.9rem;
+        padding-bottom: 1rem;
+      }
+      .content-image h2 span{
+        font-weight: 500;
+      }
+      .content-image img{
+        width: 60%;
+        margin-right: 0.5rem;
+      }
+      /* about */
+      .about{
+        margin: 0;
+        height: 350px;
+        width: 100%;
+        background-image: linear-gradient(rgb(43,155,227,0.4), rgb(43,155,227,0.7)), url('group2.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--white);
+      }
+      .about h2{
+        font-size: 1.3rem;
+      }
+      .about span{
+        font-size: 1.3rem;
+        color: var(--white);
+        font-weight: 300;
+      }
+      .about .title p{
+        color: var(--white);
+        opacity: 1;
+        word-spacing: 2px;
+      }
+      /* footer */
+      footer{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 2rem 0;
+      }
+      footer .container{
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+      }
+      footer .container li{
+        list-style: none;
+        padding: 0 .5rem;
+        transition: all .5s ease;
+      }
+      footer .container li a{
+        font-size: 0.8rem;
+        color: #222222;
+        font-weight: 500;
+      }
+      footer .container li:hover{
+        padding: 0 1rem;
+      }
+      .copyright{
+        text-align: center;
+      }
+      .copyright p{
+        font-size: 0.9rem;
+      }
+      .copyright p span{
+        color: var(--core);
+      }
+      /* media queries */
+      @media screen and (max-width: 700px){
+        /* services */
+        .item-container{
+          display: grid;
+          grid-template-columns: repeat(2,1fr);
+          place-items: center;
+          gap: 1rem;
+        }
+        /* navigation*/
+        .navbar{
+          justify-content: space-between;
+        }
+        .navbar-nav li{
+          display: block;
+          padding: 1rem 0;
+        }
+        .logo{
+          font-size: 2rem;
+        }
+        .navbar span{
+          margin: 0;
+        }
+        .navbar-nav{
+          position: absolute;
+          width: 100px;
+          height: 489px;
+          top: 0;
+          right: 0;
+          background: rgba(24,120,182,0.6);
+          text-align: center;
+          padding: 2rem 0;
+        }
+        /* title*/
+        .title{
+          width: 100%;
+        }
+        .title h2{
+          font-size: 1.5rem;
+        }
+        /* conference*/
+        section{
+          margin: 0;
+        }
+        .banner{
+          height: 400px;
+          background-image:url('bg.jpg');
+          background-size: cover;
+          background-position: center;
+        }
+        .banner img{
+          display: none;
+        }
+        .gallery{
+          grid-template-areas:
+          "img1"
+          "img2"
+          "img3"
+          ;
+          width: 100%;
+        }
+        /* business center */
+        .gallery2{
+          width: 100%;
+          grid-template-columns: repeat(1,1fr);
+        }
+        /* another center*/
+        .box-another-center{
+          flex-direction: column;
+          width: 100%;
+        }
+        .links{
+          display: flex;
+          flex-direction: row;
+          overflow: hidden;
+          overflow-x: scroll;
+        }
+        .links li{
+          border: 1px solid var(--white);
+        }
+      }
+    </style>
+</head>
+<body>
+  <div class="box-container">
+    <header>
+     <nav class="navbar">
+        <div class="logo-title">
+          <a href="" class="logo">Busycore</a></br>
+          <span>Services</span>
+        </div>
+        <div class="navbar-nav">
+          <li>
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">Services</a>
+          </li>
+          <li>
+            <a href="#">Centers</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Contact</a>
+          </li>
+        </div>
+     </nav>
+     <div class="banner">
+        <div class="container">
+          <img src="bg.jpg">
+        </div>
+      </div>
+    </header>
+    <!--services-->
+  <section class="services">
+    <div class="title">
+      <h2>SERVICES | <span>MAIN BUSINESS</span>
+      </h2>
+    </div>
+    <div class="item-container">
+      <!--item-->
+      <div class="box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h4>RESEARCH</h4>
+      </div>
+      <!--end of item-->
+      <!--item-->
+      <div class="box">
+        <i class="fa-solid fa-truck"></i>
+        <h4>TRANSPORT</h4>
+      </div>
+      <!--end of item-->
+      <!--item-->
+      <div class="box">
+        <i class="fa-solid fa-clock"></i>
+        <h4>SAVE TIME</h4>
+      </div>
+      <!--end of item-->
+      <!--item-->
+      <div class="box">
+        <i class="fa-solid fa-laptop"></i>
+        <h4>FLEXIBLE</h4>
+      </div>
+      <!--end of item-->
+    </div>
+  </section>
+  <!--end of services-->
+  <!--conference-->
+  <section class="conference">
+    <div class="title">
+      <h2>FLEXIBLE | <span>VIDEO CONFERENCE</span>
+      </h2>
+    </div>
+    <div class="gallery">
+      <!--image-->
+      <img src="Img1.jpg" class="image-1">
+      <img src="Img2.jpg" class="image-2">
+      <img src="Img3.jpg" class="image-3">
+    </div>
+  </section>
+  <!--end of conference-->
+  <section class="center">
+    <div class="title">
+      <h2>COMPANY | <span>BUSINESS CENTER</span>
+      </h2>
+      <p>We offer private or shared office solutions such as reception, internet, courier, conference, and security.</p>
+    </div>
+    <div class="gallery2">
+      <!--image2 items-->
+      <div class="image2">
+        <img src="3.jpg">
+      </div>
+      <!--image2 end-->
+      <!--image2 items-->
+      <div class="image2">
+        <img src="2.jpg">
+      </div>
+      <!--image2 end-->
+      <!--image2 items-->
+      <div class="image2">
+        <img src="1.jpg">
+      </div>
+      <!--image2 end-->
+      <!--image2 items-->
+      <div class="image2">
+        <img src="4.jpg">
+      </div>
+      <!--image2 end-->
+    </div>
+  </section>
+  <!--end of center-->
+  <section class="another-center">
+    <div class="title">
+      <h2>COMPANY | <span>NEWS CENTER</span>
+      </h2>
+    </div>
+    <div class="box-another-center">
+      <div class="links">
+        <li>
+          <a href="#" class="c-image-1">BUSINESS</a>
+        </li>
+        <li>
+          <a href="#" class="c-image-2">SECURITY</a>
+        </li>
+        <li>
+          <a href="#" class="c-image-3">NEWS</a>
+        </li>
+        <li>
+          <a href="#" class="c-image-4">COURIER</a>
+        </li>
+        <li>
+          <a href="#" class="c-image-5">CONFERENCE</a>
+        </li>
+      </div>
+      <div class="content-image">
+          <h2><span>OUR</span> BUSINESS CENTER, CONSULTATION, AND MEETING</h2>
+        <div>
+          <img src="1.jpg">
+          <img src="1.jpg">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--end of another-center -->
+  <section class="about">
+    <div class="title">
+      <h2>BUSYCORE | 
+      <span>ABOUT US</span>
+      </h2>
+      <p>We offer private or shared office solutions such as reception, internet, courier, conference, and security.</p>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <li>
+        <a href="#">HOME</a>
+      </li>
+      <hr>
+      <li>
+        <a href="#">SERVICES</a> 
+      </li>
+      <hr>
+      <li>
+        <a href="#">CONFERENCE</a> 
+      </li>
+      <hr>
+      <li>
+        <a href="#">CENTERS</a>
+      </li>
+    </div>
+    <div class="copyright">
+      <p>Copyright &copy 2022 Business. All Rights Reserved <span>Busycore</span></p>
+    </div>
+  </footer>
+  <!--end of about -->
+  </div>
+  <script>
+var win = window,
+    doc = document,
+    docElem = doc.documentElement,
+    body = doc.getElementsByTagName('body')[0],
+    x = win.innerWidth || docElem.clientWidth || body.clientWidth,
+    y = win.innerHeight|| docElem.clientHeight|| body.clientHeight;
+document.write(x + ' × ' + y);
+  </script>
+</body>
+</html>
